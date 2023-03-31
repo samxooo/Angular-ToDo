@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-app-angular';
+
+  list = ["Here's Your List"];
+
+  constructor() {}
+
+  onAddToDo(item: string): void {
+    this.list.push(item)
+  }
+
+  onDeleteItem(item: string) {
+    const index = this.list.indexOf(item);
+    if (index >= 0) {
+      this.list.splice(index, 1);
+    }
+  }
 }
